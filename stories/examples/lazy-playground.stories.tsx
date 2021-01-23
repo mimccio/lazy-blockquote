@@ -68,6 +68,7 @@ import {
   ToolbarAlign,
   ToolbarElement,
   ToolbarImage,
+  ToolbarLazyBlockquoteElement,
   ToolbarLink,
   ToolbarList,
   ToolbarMark,
@@ -165,7 +166,7 @@ export const Plugins = () => {
           {
             hotkey: "enter",
             query: {
-              allow: [options.code_block.type, options.blockquote.type, options.td.type],
+              allow: [options.code_block.type, options.lazy_blockquote.type, options.td.type],
             },
           },
         ],
@@ -254,7 +255,7 @@ export const Plugins = () => {
           <ToolbarElement type={options.h6.type} icon={<Looks6 />} />
           <ToolbarList {...options} typeList={options.ul.type} icon={<FormatListBulleted />} />
           <ToolbarList {...options} typeList={options.ol.type} icon={<FormatListNumbered />} />
-          <ToolbarElement type={options.blockquote.type} icon={<FormatQuote />} />
+          <ToolbarLazyBlockquoteElement type={options.lazy_blockquote.type} icon={<FormatQuote />} />
           <ToolbarElement type={options.code_block.type} icon={<CodeBlock />} />
 
           {/* Marks */}
