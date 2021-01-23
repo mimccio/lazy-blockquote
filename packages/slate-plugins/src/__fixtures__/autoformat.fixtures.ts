@@ -58,9 +58,14 @@ export const autoformatRulesFixtures: AutoformatRule[] = [
     },
   },
   {
+    type: options.blockquote.type,
+    markup: [">"],
+    preFormat,
+  },
+  {
     // TODO
     type: options.lazy_blockquote.type,
-    markup: [">"],
+    markup: ["<"],
     preFormat,
   },
   {
