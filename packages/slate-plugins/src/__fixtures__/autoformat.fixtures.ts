@@ -63,12 +63,6 @@ export const autoformatRulesFixtures: AutoformatRule[] = [
     preFormat,
   },
   {
-    // TODO
-    type: options.lazy_blockquote.type,
-    markup: ["<"],
-    preFormat,
-  },
-  {
     type: MARK_BOLD,
     between: ["**", "**"],
     mode: "inline",

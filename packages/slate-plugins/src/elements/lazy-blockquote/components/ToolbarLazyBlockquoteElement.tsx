@@ -7,7 +7,7 @@ import { ToolbarButton } from "../../../components/ToolbarButton/index";
 import { ToolbarLazyBlockquoteElementProps } from "./ToolbarLazyBlockquoteElement.types";
 
 /**
- * Toolbar button to toggle lazy_blockquote element in selection.
+ * Toolbar button to toggle lazy blockquote element in selection.
  */
 export const ToolbarLazyBlockquoteElement = ({ type, inactiveType, ...props }: ToolbarLazyBlockquoteElementProps) => {
   const editor = useSlate();

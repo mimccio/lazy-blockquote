@@ -5,10 +5,6 @@ import { getLazyBlockquoteElementStyles } from "./LazyBlockquoteElement.styles";
 
 const getClassNames = classNamesFunction<LazyBlockquoteElementStyleProps, LazyBlockquoteElementStyles>();
 
-/**
- * BlockquoteElement with no default styles.
- * [Use the `styles` API to add your own styles.](https://github.com/OfficeDev/office-ui-fabric-react/wiki/Component-Styling)
- */
 export const LazyBlockquoteElementBase = ({
   attributes,
   children,
@@ -16,10 +12,7 @@ export const LazyBlockquoteElementBase = ({
   styles,
   htmlAttributes,
 }: LazyBlockquoteElementProps) => {
-  const classNames = getClassNames(styles, {
-    className,
-    // Other style props
-  });
+  const classNames = getClassNames(styles, { className });
 
   return (
     <blockquote {...attributes} className={classNames.root} {...htmlAttributes}>
@@ -29,7 +22,7 @@ export const LazyBlockquoteElementBase = ({
 };
 
 /**
- * BlockquoteElement
+ * LazyBlockquoteElement
  */
 export const LazyBlockquoteElement = styled<
   LazyBlockquoteElementProps,
