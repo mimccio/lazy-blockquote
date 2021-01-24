@@ -1,6 +1,6 @@
-import { IStyle } from "@uifabric/styling";
-import { IStyleFunctionOrObject } from "@uifabric/utilities";
-import { RenderElementProps } from "slate-react";
+import { IStyle } from '@uifabric/styling';
+import { IStyleFunctionOrObject } from '@uifabric/utilities';
+import { RenderElementProps } from 'slate-react';
 import {
   Deserialize,
   ElementWithAttributes,
@@ -9,20 +9,25 @@ import {
   RenderNodeOptions,
   RenderNodePropsOptions,
   RootProps,
-} from "../../common/types/PluginOptions.types";
+} from '../../common/types/PluginOptions.types';
 
 // Data of Element node
 export interface LazyBlockquoteNodeData {}
 
 // Element node
-export interface LazyBlockquoteNode extends ElementWithAttributes, LazyBlockquoteNodeData {}
+export interface LazyBlockquoteNode
+  extends ElementWithAttributes,
+    LazyBlockquoteNodeData {}
 
 // renderElement options given as props
 export interface LazyBlockquoteRenderElementPropsOptions {
   /**
    * Call to provide customized styling that will layer on top of the variant rules.
    */
-  styles?: IStyleFunctionOrObject<LazyBlockquoteElementStyleProps, LazyBlockquoteElementStyles>;
+  styles?: IStyleFunctionOrObject<
+    LazyBlockquoteElementStyleProps,
+    LazyBlockquoteElementStyles
+  >;
 }
 
 // renderElement props
@@ -34,7 +39,7 @@ export interface LazyBlockquoteElementProps
   element: LazyBlockquoteNode;
 }
 
-export type LazyBlockquoteKeyOption = "lazy_blockquote";
+export type LazyBlockquoteKeyOption = 'lazy_blockquote';
 
 // Plugin options
 export type LazyBlockquotePluginOptionsValues = RenderNodeOptions &
@@ -44,7 +49,12 @@ export type LazyBlockquotePluginOptionsValues = RenderNodeOptions &
 export type LazyBlockquotePluginOptionsKeys = keyof LazyBlockquotePluginOptionsValues;
 export type LazyBlockquotePluginOptions<
   Value extends LazyBlockquotePluginOptionsKeys = LazyBlockquotePluginOptionsKeys
-> = Partial<Record<LazyBlockquoteKeyOption, Pick<LazyBlockquotePluginOptionsValues, Value>>>;
+> = Partial<
+  Record<
+    LazyBlockquoteKeyOption,
+    Pick<LazyBlockquotePluginOptionsValues, Value>
+  >
+>;
 
 // renderElement options
 export type LazyBlockquoteRenderElementOptionsKeys = LazyBlockquotePluginOptionsKeys;
@@ -53,7 +63,7 @@ export interface LazyBlockquoteRenderElementOptions
 
 // deserialize options
 export interface LazyBlockquoteDeserializeOptions
-  extends LazyBlockquotePluginOptions<"type" | "rootProps" | "deserialize"> {}
+  extends LazyBlockquotePluginOptions<'type' | 'rootProps' | 'deserialize'> {}
 
 export interface LazyBlockquoteElementStyles {
   /**

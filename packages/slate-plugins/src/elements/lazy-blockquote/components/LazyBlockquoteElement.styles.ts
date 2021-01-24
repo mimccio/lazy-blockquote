@@ -1,4 +1,7 @@
-import { LazyBlockquoteElementStyleProps, LazyBlockquoteElementStyles } from "../types";
+import {
+  LazyBlockquoteElementStyleProps,
+  LazyBlockquoteElementStyles,
+} from '../types';
 
 export const getLazyBlockquoteElementStyles = ({
   className,
@@ -7,10 +10,10 @@ export const getLazyBlockquoteElementStyles = ({
     root: [
       {
         // Insert css properties
-        borderLeft: "2px solid #ddd",
-        padding: "10px 20px 10px 16px",
-        color: "#aaa",
-        margin: "8px 0",
+        borderLeft: '2px solid #ddd',
+        padding: '10px 20px 10px 16px',
+        color: '#aaa',
+        margin: '8px 0',
       },
       className,
     ],

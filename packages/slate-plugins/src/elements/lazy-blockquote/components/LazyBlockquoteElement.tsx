@@ -1,9 +1,16 @@
-import * as React from "react";
-import { classNamesFunction, styled } from "@uifabric/utilities";
-import { LazyBlockquoteElementProps, LazyBlockquoteElementStyleProps, LazyBlockquoteElementStyles } from "../types";
-import { getLazyBlockquoteElementStyles } from "./LazyBlockquoteElement.styles";
+import * as React from 'react';
+import { classNamesFunction, styled } from '@uifabric/utilities';
+import {
+  LazyBlockquoteElementProps,
+  LazyBlockquoteElementStyleProps,
+  LazyBlockquoteElementStyles,
+} from '../types';
+import { getLazyBlockquoteElementStyles } from './LazyBlockquoteElement.styles';
 
-const getClassNames = classNamesFunction<LazyBlockquoteElementStyleProps, LazyBlockquoteElementStyles>();
+const getClassNames = classNamesFunction<
+  LazyBlockquoteElementStyleProps,
+  LazyBlockquoteElementStyles
+>();
 
 export const LazyBlockquoteElementBase = ({
   attributes,
@@ -29,5 +36,5 @@ export const LazyBlockquoteElement = styled<
   LazyBlockquoteElementStyleProps,
   LazyBlockquoteElementStyles
 >(LazyBlockquoteElementBase, getLazyBlockquoteElementStyles, undefined, {
-  scope: "LazyBlockquoteElement",
+  scope: 'LazyBlockquoteElement',
 });

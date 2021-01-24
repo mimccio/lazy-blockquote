@@ -1,16 +1,22 @@
-import { LazyBlockquoteElement } from "./components/LazyBlockquoteElement";
-import { LazyBlockquoteKeyOption, LazyBlockquotePluginOptionsValues } from "./types";
+import { LazyBlockquoteElement } from './components/LazyBlockquoteElement';
+import {
+  LazyBlockquoteKeyOption,
+  LazyBlockquotePluginOptionsValues,
+} from './types';
 
-export const ELEMENT_LAZY_BLOCKQUOTE = "lazy_blockquote";
+export const ELEMENT_LAZY_BLOCKQUOTE = 'lazy_blockquote';
 
-export const DEFAULTS_LAZY_BLOCKQUOTE: Record<LazyBlockquoteKeyOption, LazyBlockquotePluginOptionsValues> = {
+export const DEFAULTS_LAZY_BLOCKQUOTE: Record<
+  LazyBlockquoteKeyOption,
+  LazyBlockquotePluginOptionsValues
+> = {
   lazy_blockquote: {
     component: LazyBlockquoteElement,
     type: ELEMENT_LAZY_BLOCKQUOTE,
-    hotkey: "alt+shift+q",
+    hotkey: 'alt+shift+q',
     rootProps: {
-      className: "slate-lazy-blockquote",
-      as: "blockquote",
+      className: 'slate-lazy-blockquote',
+      as: 'blockquote',
     },
   },
 };
