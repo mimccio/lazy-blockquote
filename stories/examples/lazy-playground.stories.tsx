@@ -59,6 +59,7 @@ import {
   ResetBlockTypePlugin,
   SearchHighlightPlugin,
   SlateDocument,
+  SlateDocumentFragment,
   SoftBreakPlugin,
   StrikethroughPlugin,
   SubscriptPlugin,
@@ -92,6 +93,7 @@ import { withHistory } from "slate-history";
 import { Slate, withReact } from "slate-react";
 import { autoformatRules } from "../config/autoformatRules";
 import {
+  createList,
   headingTypes,
   initialValueAutoformat,
   initialValueBasicElements,
@@ -116,7 +118,49 @@ export default {
   title: "Examples/Lazy Playground",
 };
 
+const initialValueLazy: SlateDocument = [
+  {
+    children: [
+      {
+        type: options.h1.type,
+        children: [{ text: "🦥 Lazy Blockquote" }],
+      },
+      {
+        type: options.p.type,
+        children: [
+          {
+            text: "You can create a Lazy Blockquote :",
+          },
+        ],
+      },
+      ...createList(
+        [
+          "by typing />>/ followed by /space/ at the beginning of any new block or existing block.",
+          "with /alt+shift+q/ after selecting some text.",
+          "by clicking on the quote button after selecting some text.",
+        ],
+        { splitSeparator: "/" }
+      ),
+      {
+        type: options.lazy_blockquote.type,
+        children: [
+          {
+            type: options.h2.type,
+            children: [{ text: "Example" }],
+          },
+          ...createList(["Lazy", "Blockquote"]),
+        ],
+      },
+      {
+        type: options.p.type,
+        children: [{ text: "" }],
+      },
+    ] as SlateDocumentFragment,
+  },
+];
+
 const initialValue: Node[] = [
+  ...initialValueLazy,
   ...initialValueForcedLayout,
   ...initialValueBasicMarks,
   ...initialValueHighlight,
